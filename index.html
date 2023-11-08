@@ -7,42 +7,88 @@
             <title> Fluminense x Boca </title>
      </head>
         <body>
-            <p>
-            <h1> <mark style ="background-color:blue">Programação (matematica II) </mark><br><br>
-            <mark style="background-color:red"> Exercicio 3 Segundo trimestre </mark> </h1>
-                    <h2> <strong>PROVA 2° TRIMESTRE</strong> </h2>
-                       <strong>Prova em laboratório de HTML </strong>
-                        <ol>
-                            <li>Questão A</li>
-                                <ul type = circle> 
-                                    <li>Colocar imagem<strong>(1)</strong> 
-                                    <img SRC="compras.png" alt></li>
-                                    <li>Colocar imagem<strong>(2)</strong>
-                                    <img SRC="casa.png" alt></li>
-                                </ul>
-                            <li>Questão B</li>
-                                <ul type = circle>
-                                    <li> Escreva os textos abaixo</li>
-                                        <ol type = "a"> 
-                                            <li>questão(a)</li>
-                                            <li>questao(b)</li>
-                                            <li>questao(c)</li>
-                                        </ol>
-                                    <li>texto 1</li>
-                                    <li><del>texto 2</del></li>
-                                    <li><ins>texto 3</ins></li>
-                                </ul>
-                            <li>Questão C</li>
-                                <ul type = circle>
-                                    <li>Enumere a partir do 5° numero os itens abaixo: </li>
-                                </ul>
-                                    <ol type = "i" start="5">
-                                        <li>item(5)</li>
-                                        <li>item(6)</li>
-                                        <li>item(7)</li>
-                                    </ol>
-                            <li>Fim de codigo</li> 
-                        </ol>
-            </p> 
+<ul class="slides-list" >
+    <li class="slide" >
+      <img src="duelo.webp" />
+    </li>
+    <li class="slide" >
+      <img src="gol1flu.webp" />
+    </li>
+    <li class="slide" >
+      <img src="gol1boca.webp" />
+    </li>
+    <li class="slide" >
+      <img src="gol2boca.webp" />
+    </li>
+</ul>
+.slides-list{
+  /*remove os estilos da lista*/
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 0;
+  
+  /* 
+	deixa todos os itens da lista
+	na horizontal e todos com a
+	mesma largura
+  */
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+.slides-list{
+	...
+	width: 400%;
+	...
+}
+.slides-list{
+	--total-items: 4;
+	...
+	width: calc(var(--total-items) * 100%);
+	...
+}
+<div class="slide-show" >
+  <ul class="slides-list" >
+    <li class="slide" >
+      <img src="https://picsum.photos/300/300?image=8" />
+    </li>
+    <li class="slide" >
+      <img src="https://picsum.photos/300/300?image=0" />
+    </li>
+    <li class="slide" >
+      <img src="https://picsum.photos/300/300?image=6" />
+    </li>
+    <li class="slide" >
+      <img src="https://picsum.photos/300/300?image=1" />
+    </li>
+  </ul>
+</div>
+.slides-list{
+  ...
+  position: relative;
+  left: 0%;
+  ...
+}
+.slides-list{
+  --selected-item: 0;
+  ...
+  position: relative;
+  left: calc(var(--selected-item) * -100%);
+  ...
+}
+<input type="radio" class="slide-controller" name="slide" checked />
+<input type="radio" class="slide-controller" name="slide" />
+<input type="radio" class="slide-controller" name="slide" />
+<input type="radio" class="slide-controller" name="slide" />
+.slide-controller:nth-child(1):checked ~ .slide-show .slides-list{--selected-item: 0;}
+.slide-controller:nth-child(2):checked ~ .slide-show .slides-list{--selected-item: 1;}
+.slide-controller:nth-child(3):checked ~ .slide-show .slides-list{--selected-item: 2;}
+.slide-controller:nth-child(4):checked ~ .slide-show .slides-list{--selected-item: 3;}
+.slides-list{
+  ...
+  transition: left 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  ...
+}
+
         </body>
 </html>
