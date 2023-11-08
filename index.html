@@ -26,15 +26,6 @@
       <img src="gol2flu.webp"/>
     </li>
 </ul>
-.slides-list
-  /*remove os estilos da lista*/
-  list-style-type: none;
-  margin: 10px 0;
-  padding: 0;
-
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
 }
 .slides-list{
 	...
@@ -63,22 +54,6 @@
     </li>
   </ul>
 </div>
-.slide-show{
-	overflow: hidden;
-}
-.slides-list{
-	...
-	position: relative;
-	left: 0%;
-	...
-}
-.slides-list{
-	--selected-item:0;
-	...
-	position: relative;
-	left: calc(var(--selected-item) *-100%);
-	...
-}
 <input type="radio" class="slide-controller" name="slide" checked />
 <input type="radio" class="slide-controller" name="slide" />
 <input type="radio" class="slide-controller" name="slide" />
