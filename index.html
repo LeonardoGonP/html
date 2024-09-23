@@ -1,35 +1,47 @@
-<!DOCTYPE html> .slides-list{
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width inicial-scale=1.0">
-        <link rel="short cut icon" href="liberta.jpg" type="imagem/x-ion">
-            <title> Fluminense x Boca </title>
-     </head>
-        <body>
-<div class="carousel">
-  <input type="radio" name="carousel" id="duelo.webp" checked>
-  <input type="radio" name="carousel" id="gol1flu.webp">
-  <input type="radio" name="carousel" id="gol1boca.webp">
-  <input type="radio" name="carousel" id="gol2flu.webp">
-  <div class="slides">
-    <div class="slide">
-      <img src="duelo.webp" alt="Slide 1">
-    </div>
-    <div class="slide">
-      <img src="gol1flu.webp" alt="Slide 2">
-    </div>
-    <div class="slide">
-      <img src="gol1boca.webp" alt="Slide 3">
-    </div>
-    <div class="slide">
-      <img src="gol2flu.webp" alt="Slide 3">
-    </div>
-  </div>
-  <div class="navigation">
-    <label for="slide1"></label>
-    <label for="slide2"></label>
-    <label for="slide3"></label>
-    <label for="slide4"></label>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomes Aleatórios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #resultado {
+            font-size: 24px;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerador de Nomes Aleatórios</h1>
+    <div id="resultado">Clique no botão para gerar um nome!</div>
+    <button id="gerarNome">Gerar Nome</button>
+
+    <script>
+        const nomes = ["Ana", "Fernanda", "Maria Eduarda", "Marcelo", "Amanda", "Gustavo", "Gabriel"];
+
+        function aleatorio(lista) {
+            const posicao = Math.floor(Math.random() * lista.length);
+            return lista[posicao];
+        }
+
+        document.getElementById('gerarNome').addEventListener('click', () => {
+            const nomeAleatorio = aleatorio(nomes);
+            document.getElementById('resultado').textContent = Nome Aleatório: ${nomeAleatorio};
+        });
+    </script>
+</body>
+</html>
